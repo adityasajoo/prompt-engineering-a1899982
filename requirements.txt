@@ -1,16 +1,13 @@
-fastapi>=0.111
-uvicorn[standard]>=0.30
-pydantic>=2.7
-loguru>=0.7
-orjson>=3.10
-python-dotenv>=1.0
-# llama.cpp bindings (Metal via env above)
-llama-cpp-python>=0.2.76
-# data & metrics
-datasets>=2.19.0
-rouge-score>=0.1.2
-huggingface_hub>=0.23.0
-
+numpy>=1.26
+scikit-learn>=1.4
+networkx>=3.2
+nltk>=3.8
 sacrebleu>=2.4.2
+rouge-score>=0.1.2
+matplotlib>=3.8
+pandas>=2.2
+jinja2>=3.1
+#  (enable via USE_BERTSCORE=1)
+torch>=2.1
 bert-score>=0.3.13
-pandas>=2.2.2
+datasets>=3.0
