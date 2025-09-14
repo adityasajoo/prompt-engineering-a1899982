@@ -18,8 +18,5 @@ python -m app.plots.plot_seed_contributions runs
 python -m app.plots.plot_violin_by_dataset runs
 python -m app.plots.plot_confusion_matrix runs
 
-# 5) per-run progress plots already produced by earlier scripts, but if you need:
-# for d in runs/*; do [ -d "$d" ] && python -m app.plots.plot_run_progress "$d"; done
-
 # 6) final HTML report
 python -m app.reports.make_report runs

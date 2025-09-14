@@ -10,7 +10,6 @@ from ..summarize.extractive import summarise_extractive
 from ..eval.metrics import evaluate_summary
 from ..strategies.seeds import generate_seeds
 
-from app.core.simple_progress import print_pct, newline
 import sys 
 
 
@@ -60,18 +59,15 @@ def run_baseline(dataset_name: str, inputs: List[str], refs: List[str],
 
     # Generations ≥1
     for gen in range(1, generations+1):
-        print_pct(f"[{dataset_name}] generations", gen, generations)
 
         scored = []
         for pi, s in enumerate(survivors):
-            print_pct(f"  gen {gen} • parents", pi + 1, len(survivors))
 
             for (kcfg, op) in all_children_with_ops(s["cfg"], [x["cfg"] for x in survivors], n_random=1):
                 agg = _eval_cfg(dataset_name, inputs, refs, kcfg, gen, f"{s['id']}_g{gen}", evals_path, weights)
                 scored.append((kcfg, agg["composite"], agg, op, s["cfg"]))
                 log_jsonl(muts_path, {"event":"mutation","gen":gen,"parent":s["cfg"],"child":kcfg,"op":op})
-                if (ci + 1 == len(children)) or ((ci + 1) % max(1, len(children)//10) == 0):
-                    print_pct(f"    gen {gen} • children", ci + 1, len(children))
+                # Removed progress printing
         scored.sort(key=lambda t: t[1], reverse=True)
         survivors = [{"id": f"g{gen}_s{i}", "name":"survivor", "cfg": clip_cfg(scored[i][0])}
                      for i in range(min(top_k, len(scored)))]

@@ -25,11 +25,6 @@ python -m app.plots.plot_best_mean_median_by_gen runs || true
 python -m app.plots.plot_metric_histograms runs || true
 
 
-# Per-run learning curves
-for d in runs/*; do
-  [ -d "$d" ] && python -m app.plots.plot_run_progress "$d" || true
-done
-
 # Finally, the report
 python -m app.reports.make_report runs
 echo "Open: runs/report.html"

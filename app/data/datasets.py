@@ -20,6 +20,10 @@ _TINY = {
     ],
 }
 
+def offline_size(dataset: str) -> int:
+    """Return tiny offline sample size for a dataset identifier (0 if unknown)."""
+    return len(_TINY.get(dataset.lower(), []))
+
 def _try_hf(ds_name: str, n: int, start: int):
     try:
         from datasets import load_dataset
