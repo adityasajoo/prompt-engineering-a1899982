@@ -1,4 +1,4 @@
-# Prompt Optimizer (Mac, llama.cpp + FastAPI)
+# Prompt Optimizer 
 
 Evolutionary prompt optimization on open LLMs, Metal-accelerated via llama.cpp.
 
