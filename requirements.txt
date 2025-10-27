@@ -1,13 +1,68 @@
-numpy>=1.26
-scikit-learn>=1.4
-networkx>=3.2
-nltk>=3.8
-sacrebleu>=2.4.2
+# Core dependencies
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+accelerate>=0.24.0
+bitsandbytes>=0.41.0  # For 8-bit quantization
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+python-dotenv>=1.0.0
+
+# For optimization metrics
+scikit-learn>=1.3.0
+nltk>=3.8.0
+
+# For better tokenization
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# Optional: For specific models
+einops>=0.7.0  # Some models require this
+safetensors>=0.4.0  # For faster model loading
+
+rouge-score
+sacrebleu
+bert-score
+
+
+# Core dependencies
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+accelerate>=0.24.0
+
+# Quantization for M4 (4-bit loading)
+bitsandbytes>=0.41.0
+
+# LLM APIs
+openai>=1.3.0
+anthropic>=0.7.0
+
+# Evaluation metrics
 rouge-score>=0.1.2
-matplotlib>=3.8
-pandas>=2.2
-jinja2>=3.1
-#  (enable via USE_BERTSCORE=1)
-torch>=2.1
+sacrebleu>=2.3.1
 bert-score>=0.3.13
-datasets>=3.0
+
+# Data processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Progress bars
+tqdm>=4.65.0
+
+# Optional but recommended
+sentencepiece>=0.1.99  # For some tokenizers
+protobuf>=3.20.0

@@ -1,8 +1,8 @@
-.venv/
+venv
 models/*
 runs/*
 logs/*
 __pycache__/
 *.pyc
 .DS_Store
-app/.DS_Store
+.DS_Store
